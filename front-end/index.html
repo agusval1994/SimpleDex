@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
     <script src="script.js"></script>
 
     <link rel="stylesheet" href="css/SimpleDexStyle.css">
@@ -21,11 +22,10 @@
         
             <div class="right-section">
                 <img src="images/metamaskIcon.png" alt="Logo" class="logo">
-                <button onclick="connectMeta()" class="connect-wallet">Connect Wallet</button>
+                <button id="metabutton" onclick="connectMeta()" class="connect-wallet">Connect Wallet</button>
             </div>
         </header>
     </div>
-
 
     <div class="container">
         <div class="newsContainer">
