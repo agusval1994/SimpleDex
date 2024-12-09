@@ -1,0 +1,593 @@
+body{
+    background-image: url(../images/simpleDexBackground.png);
+    width: 100%;
+    max-width: 1920px;
+    min-width: 412px;
+}
+
+/*--------------------------------------------------------------------------
+---------------------------------Global-------------------------------------
+----------------------------------------------------------------------------*/
+
+.container{
+    position: relative;
+    text-align: center;
+    width: 960px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    min-width: 412px;
+}
+
+/*------Header------*/
+
+header {
+    display: flex; /* Flexbox para alineación en fila */
+    align-items: center; /* Centrar elementos verticalmente */
+    justify-content: space-between; /* Elementos a los extremos */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    padding: 10px 20px; /* Espaciado interno */
+    background-color: #212121; /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+    border-radius: 20px 20px 20px 20px;
+}
+
+header .left-section {
+    display: flex; /* Agrupa logo y texto en una fila */
+    align-items: center; /* Centra verticalmente logo y texto */
+    gap: 10px; /* Espacio entre el logo y el texto */
+}
+
+header .logo {
+    height: 50px; /* Ajusta el tamaño del logo */
+    width: 50px; /* Asegúrate de que sea cuadrado */
+    border-radius: 50%; /* Hace el logo circular */
+    object-fit: cover; /* Ajusta la imagen dentro del círculo */
+}
+
+header h1 {
+    font-family: Arial, sans-serif; /* Fuente del texto */
+    font-size: 1.5rem; /* Tamaño del texto */
+    margin: 0; /* Elimina margen predeterminado */
+    font-weight: bold; /* Hace el texto negrita */
+}
+
+header .right-section {
+    display: flex; /* Agrupa los elementos de la derecha */
+    align-items: center; /* Alinea los elementos verticalmente */
+}
+
+header .connect-wallet {
+    background-color: #00bcd4; /* Fondo azul claro */
+    color: black; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 20px; /* Bordes redondeados */
+    font-size: 0.9rem; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    cursor: pointer; /* Manito al pasar el mouse */
+    transition: background-color 0.3s ease; /* Animación de hover */
+}
+
+header .connect-wallet:hover {
+    background-color: #0097a7; /* Color más oscuro al pasar el mouse */
+}
+
+.liquidity-card {
+    background-color: black; /* Fondo de la tarjeta */
+    color: white; /* Texto blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra */
+    text-align: center;
+}
+
+.title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.underline {
+    width: 60%;
+    margin: 10px auto 20px;
+    border: 1px solid white;
+}
+
+.input-group {
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group label {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 80px;
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid white;
+    text-align: center;
+    background-color: #f5f5f5;
+    color: black;
+}
+
+.add-button {
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+    background-color: #0056b3;
+}
+
+/*
+header{
+    background: black;
+    border-radius: 20px 20px 20px 20px;
+    max-height: 75%;
+    position: relative;
+}
+
+h1{
+    text-align: center;
+    font-family: papyrus;
+    color: white;
+    font-size: 2vw;
+}
+*/
+.menu{
+    background: grey;
+    border-radius: 0px 0px 1.5vw 1.5vw;
+    display: grid;
+    align-items: center;
+    grid-gap: 2vw;
+    grid-template-columns: repeat(auto-fit, minmax(2vw, 1fr));
+}
+
+div.menu a{
+    display: inline-block;
+    background: darkred;
+    color: white;
+    font-family: papyrus;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2vw;
+    height : 3vw;
+    padding-bottom: 10px;
+    border-radius: 0vw 0vw 1.5vw 1.5vw;
+    max-width: 100%;
+    max-height: 100%;
+    position: a;
+}
+
+div.menu a.empty{
+    background: transparent;
+}
+
+.redirect-button {
+    cursor: pointer;
+}
+
+
+/*-------Main-------*/
+
+.newsContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(470px, 1fr));
+    grid-gap: 0rem;
+    justify-items: center;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.cards{
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.cardContents{
+    display: inline-block;
+    vertical-align: middle;
+    background: black;
+    border-radius: 1vw;
+    /*border: 7px solid darkred; /* Añade un borde dorado de 5px de grosor */
+    /*aspect-ratio: 16/9;*/
+}
+
+.footIcon img{
+    height: 30px;
+    width: 30px;
+    font-weight: 400;
+    display: inline;
+    float: center;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.endNews{
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/*------Footer------*/
+
+footer{
+    background: black;
+    border-radius: 20px;
+    max-width: 100%;
+    position: relative;
+    display: grid;
+    text-align: center;
+    width: 960px;
+    margin: 0 auto;
+}
+
+.footerIcon img{
+    height: 30px;
+    width: 30px;
+    font-weight: 400;
+    display: inline;
+    float: right;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+footer .footerDiv .footText{
+    text-align: center;
+    font-family: papyrus;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+    float: left;
+    margin-left: 10px;
+    word-spacing: 0.25em;
+}
+
+/* Main Page*/
+
+.cardTitle{
+    text-align: center;
+    font-family: papyrus;
+    font-weight: bold;
+    color: white;
+    font-size: 22px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.imageNews{
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: auto;
+    object-fit: scale-down;
+}
+
+/*--------------------------------------------------------------------------
+---------------------------Home Page-------------------------------------
+----------------------------------------------------------------------------*/
+
+.PageHome .title{
+    text-align: center;
+    font-family: papyrus;
+    font-weight: bold;
+    color: white;
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.PageHome .entryContent{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.PageHome .endEntry{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.PageHome h2{
+    text-align: left;
+    font-family: papyrus;
+    color: white;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.PageHome p{
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 20px;
+}
+
+.homeCheatImage img{
+    width: 62.5vw;
+    height: 0px;
+}
+
+.img{
+    max-width: 95%;
+    width: auto;
+    max-height: 95%;
+    height: auto;
+}
+
+.newsVideo-Image{
+    max-width: 95%;
+    width: auto;
+    max-height: 95%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.newsTitle{
+    text-align: center;
+    font-family: papyrus;
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.newsContent{
+    display: inline-block;
+    vertical-align: middle;
+    background: black;
+    border-radius: 1vw;
+    max-width: 950px;
+    padding-bottom: 10px;
+}
+
+.newEntryContainer {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/*--------------------------------------------------------------------------
+-----------------------------Games Page-------------------------------------
+----------------------------------------------------------------------------*/
+.gameVideo{
+    width: 460px;
+    height: 264px;
+}
+
+.video{
+    width: 460px;
+    height: 264px;
+}
+
+/*--------------------------------------------------------------------------
+-------------------------3D Models Page-------------------------------------
+----------------------------------------------------------------------------*/
+
+.sketchfab{
+    width: 460px;
+    height: 264px;
+}
+
+/*--------------------------------------------------------------------------
+---------------------------Contact Page-------------------------------------
+----------------------------------------------------------------------------*/
+
+.left{
+    display: inline-block;
+    vertical-align: middle;
+    background: grey;
+    border-radius: 25px 25px 25px 25px;
+    width: 460px;
+    height: auto;
+}
+
+.left h2{
+    text-align: center;
+    font-family: papyrus;
+    color: white;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+hr.dashedPrincipal {
+    border: 0;
+    border-top: 3px dashed #bbb;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.left h3{
+    text-align: center;
+    font-family: papyrus;
+    color: black;
+    font-size: 20px;
+}
+
+.profileImage{
+    border-radius: 50px 50px 50px 50px;
+    width: 200px;
+    height: auto;
+}
+
+.left h4{
+    text-align: center;
+    font-family: papyrus;
+    color: white;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.contactInfo{
+    display: grid;
+    grid-template-columns: 50px 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: -15px;
+}
+
+.contactInfo .contactIcon{
+    width: 40px;
+    height: 40px;
+}
+
+.contactInfo h5{
+    font-family: papyrus;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 10px;
+}
+
+.contactInfo h6{
+    margin-top: -20px;
+    font-family: papyrus;
+    color: white;
+    font-size: 20px;
+}
+
+
+.right{
+    display: inline-block;
+    vertical-align: middle;
+    background: grey;
+    border-radius: 25px 25px 25px 25px;
+    width: 460px;
+    height: auto;
+}
+
+.block{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.block h2{
+    text-align: left;
+    font-family: papyrus;
+    color: white;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.block p{
+    text-align: left;
+    font-family: papyrus;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+ul{
+    text-align: left;
+    font-family: papyrus;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+ul a{
+    text-decoration: none;
+    color: black;
+}
+
+hr.dashed {
+    border: 0;
+    border-top: 3px dashed #bbb;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+li{
+    margin-bottom: 2px;
+}
+
+/*--------------------------------------------------------------------------
+---------------------------CODE---------------------------------------------
+----------------------------------------------------------------------------*/
+
+@media screen and (min-width: 950px){
+    div.menu a{
+        font-size: 28px;
+        padding-top: 10px;
+    }
+
+    .cardContents{
+        max-width: 950px;
+    }
+}
+
+@media screen and (max-width: 412px){
+    div.menu a{
+        font-size: 10px;
+        padding-top: 5px;
+    }
+}
+
+/* Media Query para dispositivos móviles */
+@media screen and (max-width: 1000px) {
+    .newsContainer {
+        grid-template-columns: 1fr; /* Hace que las cards ocupen todo el ancho */
+        grid-gap: 10px; /* Ajusta el espacio entre las cards */
+    }
+
+    .cards {
+        width: 100%; /* Asegura que la card ocupe todo el ancho del contenedor */
+        margin: 0 auto 10px auto; /* Centra las cards y agrega espacio inferior */
+    }
+
+    .cardContents {
+        width: 100%; /* Asegura que el contenido de la card ocupe todo el ancho disponible */
+        /*aspect-ratio: 16/9;*/
+    }
+
+    .gameVideo{
+        width: 100%;
+        height: auto;
+    }
+    
+    .video{
+        width: 100%;
+        height: auto;
+    }
+
+    .sketchfab{
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+
+    .right{
+        width: 100%;
+        height: auto;
+    }
+
+    .left{
+        width: 100%;
+        height: auto;
+    }
+}
