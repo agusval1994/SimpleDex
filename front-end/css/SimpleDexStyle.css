@@ -243,3 +243,50 @@ footer .footText{
         /*aspect-ratio: 16/9;*/
     }
 }
+
+
+
+
+
+
+
+.button-group {
+    margin: 20px 0;
+}
+
+.button-row {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.info-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-right: 10px; /* Separación entre el botón y el texto */
+}
+
+.info-button:hover {
+    background-color: #0056b3;
+}
+
+.output-container {
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.copy-icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    vertical-align: middle;
+}

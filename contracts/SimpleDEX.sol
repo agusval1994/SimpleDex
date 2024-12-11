@@ -100,7 +100,7 @@ contract SimpleDEX {
     }
 
     /// @notice Swaps token B for token A.
-    /// @param amountAIn The amount of token B to swap.
+    /// @param amountBIn The amount of token B to swap.
     function swapBforA(uint256 amountBIn) external  payable {
         require(amountBIn > 0, "The amount must be > 0");
 
