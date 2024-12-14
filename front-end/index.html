@@ -5,7 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
-    <script src="script.js"></script>
+
+    <script src="./abis/TokenA.json" type="application/json" id="TokenAABI"></script>
+    <script src="./abis/TokenB.json" type="application/json" id="TokenBABI"></script>
+    <script src="./abis/SimpleDEX.json" type="application/json" id="SimpleDEXABI"></script>
+
+    <script src="./script.js" defer></script>
 
     <link rel="stylesheet" href="css/SimpleDexStyle.css">
 
@@ -72,9 +77,9 @@
                     <hr class="underline">
                     
                     <label for="tokenA">Amount of Token A to Mint</label>
-                    <input type="text" id="tokenA" placeholder="0">
+                    <input type="text" id="approveAmountA" placeholder="0">
                     
-                    <button class="add-button">MINT</button>
+                    <button onclick="handleApproveA()" class="add-button">MINT</button>
                 </div>
             </div>
 
@@ -84,9 +89,9 @@
                     <hr class="underline">
                     
                     <label for="tokenA">Amount of Token B to Mint</label>
-                    <input type="text" id="tokenB" placeholder="0">
+                    <input type="text" id="approveAmountB" placeholder="0">
                     
-                    <button onclick="handleApproveA()" class="add-button">MINT</button>
+                    <button onclick="handleApproveB()" class="add-button">MINT</button>
                 </div>
             </div>
 
@@ -96,13 +101,13 @@
                     <hr class="underline">
                     <div class="input-group">
                         <label for="tokenA">Token A</label>
-                        <input type="text" id="tokenA" placeholder="0">
+                        <input type="text" id="tokenAInput" placeholder="0">
                     </div>
                     <div class="input-group">
                         <label for="tokenB">Token B</label>
-                        <input type="text" id="tokenB" placeholder="0">
+                        <input type="text" id="tokenBInput" placeholder="0">
                     </div>
-                    <button class="add-button">ADD</button>
+                    <button onclick="addLiquidity()" class="add-button">ADD</button>
                 </div>
             </div>
 
@@ -112,13 +117,13 @@
                     <hr class="underline">
                     <div class="input-group">
                         <label for="tokenA">Token A</label>
-                        <input type="text" id="tokenA" placeholder="0">
+                        <input type="text" id="tokenAInput" placeholder="0">
                     </div>
                     <div class="input-group">
                         <label for="tokenB">Token B</label>
-                        <input type="text" id="tokenB" placeholder="0">
+                        <input type="text" id="tokenBInput" placeholder="0">
                     </div>
-                    <button class="add-button">REMOVE</button>
+                    <button onclick="removeLiquidity()" class="add-button">REMOVE</button>
                 </div>
             </div>
 
@@ -128,13 +133,9 @@
                     <hr class="underline">
                     <div class="input-group">
                         <label for="tokenA">Token A</label>
-                        <input type="text" id="tokenA" placeholder="0">
+                        <input type="text" id="tokenAInput" placeholder="0">
                     </div>
-                    <div class="input-group">
-                        <label for="tokenB">Token B</label>
-                        <input type="text" id="tokenB" placeholder="0">
-                    </div>
-                    <button class="add-button">SWAP</button>
+                    <button onclick="swapTokenAForTokenB()" class="add-button">SWAP</button>
                 </div>
             </div>
             
@@ -143,14 +144,21 @@
                     <h2 class="title">Swap Token B for A</h2>
                     <hr class="underline">
                     <div class="input-group">
-                        <label for="tokenA">Token A</label>
-                        <input type="text" id="tokenA" placeholder="0">
+                        <label for="tokenA">Token B</label>
+                        <input type="text" id="tokenBInput" placeholder="0">
                     </div>
-                    <div class="input-group">
-                        <label for="tokenB">Token B</label>
-                        <input type="text" id="tokenB" placeholder="0">
+                    <button onclick="swapTokenBForTokenA()" class="add-button">SWAP</button>
+                </div>
+            </div>
+
+            <div class="cards">
+                <div class="liquidity-card">
+                    <h2 class="title">Get Price</h2>
+                    <hr class="underline">
+                    <div class="getPrice">
+                        <input type="text" id="tokenAddressInput" placeholder="Ingresa la dirección del token" />
                     </div>
-                    <button class="add-button">SWAP</button>
+                    <button onclick="getPrice()" class="add-button">GET PRICE</button>
                 </div>
             </div>
         </div>

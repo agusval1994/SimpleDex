@@ -104,6 +104,10 @@ header .connect-wallet:hover {
     align-items: center;
 }
 
+.getPrice{
+    align-items: center;
+}
+
 .input-group label {
     font-size: 1rem;
     font-weight: bold;
